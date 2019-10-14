@@ -10,13 +10,14 @@ const burger = (props) => {
         // console.log(igKey);
         // console.log(props.ingredients[igKey]);
         // console.log(Array(props.ingredients[igKey]));
-        return [...Array(props.ingredients[igKey])].map((_, i) => {
+        return [...Array(props.ingredients[igKey])].map((_, i) => {     // ne mi e jasno so se desava tuka!!!
            return <BurgerIngredient key={igKey + i} type={igKey} />
         })
     }).reduce((arr, el) => {
         return arr.concat(el);
-    }, [])
+    }, []);
 
+    console.log('transformedIngredients')
     console.log(transformedIngredients)
     if (transformedIngredients.length === 0) {
         transformedIngredients = <p>Please start adding ingredients!</p>
